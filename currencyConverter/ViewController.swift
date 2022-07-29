@@ -58,10 +58,87 @@ class ViewController: UIViewController {
                 
                 if data != nil{
                     do{
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String,Any>
                         
                         DispatchQueue.main.async {
-                            print(jsonResponse)
+                            
+                            if let rates = jsonResponse ["rates"] as? [String : Any]{
+                                
+                                if let aed = rates["AED"] as? Double{
+                                    self.aedLabel.text = "AED: \(aed)"
+                                }
+                                if let ang = rates["ANG"] as? Double{
+                                    self.angLabel.text = "ANG: \(ang)"
+                                }
+                                if let ars = rates["ARS"] as? Double{
+                                    self.arsLabel.text = "ARS: \(ars)"
+                                }
+                                if let bam = rates["BAM"] as? Double{
+                                    self.bamLabel.text = "BAM: \(bam)"
+                                }
+                                if let bdt = rates["BDT"] as? Double{
+                                    self.bdtLabel.text = "BDT: \(bdt)"
+                                }
+                                if let bhd = rates["BHD"] as? Double{
+                                    self.bhdLabel.text = "BHD: \(bhd)"
+                                }
+                                if let cad = rates["CAD"] as? Double{
+                                    self.cadLabel.text = "CAD: \(cad)"
+                                }
+                                if let chf = rates["CHF"] as? Double{
+                                    self.chfLabel.text = "CHF: \(chf)"
+                                }
+                                if let cny = rates["CNY"] as? Double{
+                                    self.cnyLabel.text = "CNY: \(cny)"
+                                }
+                                if let dkk = rates["DKK"] as? Double{
+                                    self.dkkLabel.text = "DKK: \(dkk)"
+                                }
+                                if let eur = rates["EUR"] as? Double{
+                                    self.eurLabel.text = "EUR: \(eur)"
+                                }
+                                if let gel = rates["GEL"] as? Double{
+                                    self.gelLabel.text = "GEL: \(gel)"
+                                }
+                                if let gmd = rates["GMD"] as? Double{
+                                    self.gmdLabel.text = "GMD: \(gmd)"
+                                }
+                                if let gyd = rates["GYD"] as? Double{
+                                    self.gydLabel.text = "GYD: \(gyd)"
+                                }
+                                if let hkd = rates["HKD"] as? Double{
+                                    self.hkdLabel.text = "HKD: \(hkd)"
+                                }
+                                if let jep = rates["JEP"] as? Double{
+                                    self.jepLabel.text = "jep: \(jep)"
+                                }
+                                if let kes = rates["KES"] as? Double{
+                                    self.kesLabel.text = "KES: \(kes)"
+                                }
+                                if let kgs = rates["KGS"] as? Double{
+                                    self.kgsLabel.text = "KGS: \(kgs)"
+                                }
+                                if let kpw = rates["KPW"] as? Double{
+                                    self.kpwLabel.text = "KPW: \(kpw)"
+                                }
+                                if let kzt = rates["KZT"] as? Double{
+                                    self.kztLabel.text = "KZT: \(kzt)"
+                                }
+                                if let lkr = rates["LKR"] as? Double{
+                                    self.lkrLabel.text = "LKR: \(lkr)"
+                                }
+                                if let lrd = rates["LRD"] as? Double{
+                                    self.lrdLabel.text = "LRD: \(lrd)"
+                                }
+                                if let omr = rates["OMR"] as? Double{
+                                    self.omrLabel.text = "OMR: \(omr)"
+                                }
+                                if let vuv = rates["VUV"] as? Double{
+                                    self.vuvLabel.text = "VUV: \(vuv)"
+                                }
+                                
+                                
+                            }
                         }
                     
                     }catch{
