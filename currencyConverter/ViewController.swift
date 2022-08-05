@@ -136,7 +136,7 @@ class ViewController: UIViewController {
                                 if let vuv = rates["VUV"] as? Double{
                                     self.vuvLabel.text = "VUV: \(vuv)"
                                 }
-                                
+                                print("succes!")
                                 
                             }
                         }
